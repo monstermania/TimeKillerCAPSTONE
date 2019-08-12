@@ -1,0 +1,28 @@
+*{
+    margin:0px;
+}
+
+nav{
+    border:3px rgb(42, 42, 51) solid;
+    background:grey;
+}
+
+.navText{
+    font-family: 'Galindo', sans-serif;
+    text-align:center;
+    font-size:40px;
+    padding-right:20px;
+    color:rgb(197, 193, 193);
+}
+
+#navSI{
+    padding-left:770px;
+}
+
+#GamesTitle{
+    font-family: 'Galindo', sans-serif;
+    font-size:100px;
+    color:rgb(197, 193, 193);
+}
+
+
