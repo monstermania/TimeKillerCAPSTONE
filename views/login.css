@@ -15,6 +15,14 @@ main{
 
 h1{
     font-family: 'Galindo', sans-serif;
+    text-shadow:2px 2px rgb(0, 0, 0);
+    color:white;
+}
+
+a{
+    font-family: 'Galindo', sans-serif;
+    text-shadow:2px 2px rgb(0, 0, 0);
+    color:white;
 }
 
 nav{
@@ -23,12 +31,9 @@ nav{
 }
 
 .navText{
-    font-family: 'Galindo', sans-serif;
     text-align:center;
     font-size:40px;
     padding-right:20px;
-    text-shadow:2px 2px rgb(0, 0, 0);
-    color:white;
 }
 
 #navSI{
@@ -38,8 +43,6 @@ nav{
 #loginTitle{
     text-align:center;
     font-size:70px;
-    text-shadow:2px 2px rgb(0, 0, 0);
-    color:rgb(255, 255, 255);
 }
 
 input{
@@ -66,16 +69,40 @@ input{
 }
 
 #submitButton{
-    margin-top:70px;
+    margin-top:50px;
     padding:5px;
     text-decoration: none;
-    font-family: 'Galindo', sans-serif;
-    text-shadow:2px 2px rgb(0, 0, 0);
     font-size:70px;
-    color:white;
     border:5px rgb(255, 255, 255) solid;
     border-radius:5%;
     background:rgb(101, 153, 250);
+}
+
+#showPSWBox{
+    margin-top:10px;
+    margin-right:10px;
+    text-decoration: none;
+    text-align: center;
+    font-size:20px;
+    border:5px rgb(255, 255, 255) solid;
+    border-radius:5%;
+    background:rgb(101, 153, 250);
+    line-height:1.15;
+    height:20px;
+    width:20px;
+    cursor:pointer;
+}
+
+#showPSWText{
+    margin-top:5px;
+    margin-right:210px;
+}
+
+#checkboxSection{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 input:focus::-webkit-input-placeholder { color:rgb(192, 192, 192); }

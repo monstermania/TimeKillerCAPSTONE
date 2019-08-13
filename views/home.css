@@ -2,27 +2,37 @@
     margin:0px;
 }
 
+h1{
+    font-family: 'Galindo', sans-serif;
+    text-shadow:2px 2px rgb(0, 0, 0);
+    color:white;
+}
+
+a{
+    font-family: 'Galindo', sans-serif;
+    text-shadow:2px 2px rgb(0, 0, 0);
+    color:white;
+}
+
 nav{
-    border:3px rgb(42, 42, 51) solid;
-    background:grey;
+    border:3px rgb(139, 179, 251) solid;
+    background:rgb(139, 179, 251);
 }
 
 .navText{
-    font-family: 'Galindo', sans-serif;
     text-align:center;
     font-size:40px;
     padding-right:20px;
-    color:rgb(197, 193, 193);
 }
 
 #navSI{
-    padding-left:770px;
+    padding-left:740px;
 }
 
 #GamesTitle{
-    font-family: 'Galindo', sans-serif;
     font-size:100px;
-    color:rgb(197, 193, 193);
+    color:rgb(139, 179, 251);
+    text-shadow:black;
 }
 
 
