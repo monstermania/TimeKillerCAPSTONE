@@ -16,17 +16,29 @@ const userSchema = mongoose.Schema({
     password:{
         type:String,
         require:true
-    }
+    },
+    tokens:[{
+        access:{
+        type:String,
+        required:true
+        },
+        token:{
+        type: String,
+        required:true
+            }
+    }]
 }, {timestamps:true});
 
 userSchema.methods.generateAuthToken = async function() {
     let user = this;
     let access = 'auth';
     let token = jwt.sign({_id: user._id.toHexString(), access}, process.env.JWT_SECRET).toString();
+    console.log(user)
+    console.log(access)
+    console.log(token)
 
 
-
-    user.tokens = user.tokens.concat([{ access, token}]);
+    user.tokens = user.tokens.concat([{ access, token }]);
 
     const savedToken = await user.save();
 
@@ -40,6 +52,7 @@ userSchema.statics.findByToken = async function(token) {
     try 
     { 
         decoded = jwt.verify(token, process.env.JWT_SECRET);
+        console.log(`decoded successful`)
     }
 
     catch(err)
@@ -55,7 +68,7 @@ userSchema.statics.findByToken = async function(token) {
             "tokens.token": token,
             "tokens.access": "auth"
         });
-
+        console.log(`verifytoken: ${foundUser}`)
         return foundUser;
     }
     catch(err)

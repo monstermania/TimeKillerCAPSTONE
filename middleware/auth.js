@@ -1,6 +1,6 @@
 const User = require('../models/userSchema');
 
-const authenticate = async(req, res, next) => {
+const auth = async(req, res, next) => {
 
     let token = req.header('x-auth');
 
@@ -27,4 +27,4 @@ const authenticate = async(req, res, next) => {
 }
 
 
-module.exports = authenticate;
+module.exports = auth;

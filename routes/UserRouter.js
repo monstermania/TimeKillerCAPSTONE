@@ -8,16 +8,17 @@ const
 UserRouter.post('/create', User.create);
 // READ ALL (Index)
 UserRouter.get('/', User.index);
-// READ ONE
-UserRouter.get('/:id', User.show);
-//UPDATE
-UserRouter.patch('/:id', User.update);
-//DELETE
-UserRouter.delete('/:id', User.destroy);
-//LOGIN
-UserRouter.post('/login', User.login);
 //AUTHENTICATE
 UserRouter.get('/auth', auth, User.auth);
+//LOGIN
+UserRouter.post('/login', User.login);
+// READ ONE
+UserRouter.get('/:id', auth, User.show);
+//UPDATE
+UserRouter.patch('/:id', auth, User.update);
+//DELETE
+UserRouter.delete('/:id', auth, User.destroy);
+
 
 
 module.exports = UserRouter;

@@ -61,10 +61,10 @@ module.exports = {
                         console.log(err)
                                     }   
                                          },
-                                         auth: async (req,res) => {
+                                         auth: (req,res) => {
                                             console.log('hi')
                                          }
-
+                                        
                                         }
 
     
