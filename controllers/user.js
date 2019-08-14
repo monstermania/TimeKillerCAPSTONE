@@ -41,13 +41,31 @@ module.exports = {
             },
             destroy: async (req, res) => {
                 // Console log to test route connection
-                console.log(`Finding car id# ${req.params.id} to delete`);
+                console.log(`Finding user id# ${req.params.id} to delete`);
                 // Find car with id and delete
                 await User.findOneAndDelete({ _id: req.params.id });
                 // Response with 200 if successful and send message
-                res.status(200).send(`Successfully deleted car ID # ${req.params.id}`);
-                }
+                res.status(200).send(`Successfully deleted user ID # ${req.params.id}`);
+                },
+                login: async (req,res) => {
+                    console.log('Checking for Users')
+                    try {
+                        const user = await User.findByCredentials(req.body.email, req.body.password)
+                         console.log(`userFound: ${user}`)
+                        const createdToken = await user.generateAuthToken();
+
+                        res.status(200).header('x-auth', createdToken).send(user);
+                        } 
+                        catch (err) {
+                        res.status(401).send({errorMsg: err})
+                        console.log(err)
+                                    }   
+                                         },
+                                         auth: async (req,res) => {
+                                            console.log('hi')
+                                         }
+
+                                        }
 
     
 
-}
