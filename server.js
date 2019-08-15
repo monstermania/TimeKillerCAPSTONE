@@ -9,10 +9,12 @@ const
     UserRouter = require('./routes/UserRouter'),
     auth = require('./middleware/auth'),
     hbs = require('hbs'),
+    logger = require('morgan')
     PORT = process.env.PORT || 4000;
 
     require('./db/mongoose');
 
+    app.use(logger('dev'))
     app.use(express.json());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));

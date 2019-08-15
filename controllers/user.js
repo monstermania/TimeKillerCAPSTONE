@@ -30,14 +30,18 @@ module.exports = {
             // Respond with ok if successful and return the result found
             res.status(200).send(result);
             },
-            update: async( req, res) => {
+            update: ( req, res) => {
                 console.log(`Trying to Update User with ID# ${req.params.id}`)
-                await User.findOneAndUpdate({_id: req.params.id},
-                    {
-                        email : req.body.email,
-                        username : req.body.username,
-                        password : req.body.password 
-                    });
+
+                User.findById(req.params.id, ( err, updatedUser) => {
+                    if (!req.body.password) delete req.body.password
+                    Object.assign(updatedUser, req.body)
+                    updatedUser.save((err, updatedUser) => {
+                        if(err) res.json({message: "ERROR", payload: null, code: err.code})
+                        res.json({message: "Successfully updated the user!", payload: updatedUser})
+                    })
+                })
+                    
             },
             destroy: async (req, res) => {
                 // Console log to test route connection
@@ -50,7 +54,7 @@ module.exports = {
                 login: async (req,res) => {
                     console.log('Checking for Users')
                     try {
-                        const user = await User.findByCredentials(req.body.email, req.body.password)
+                        const user = await User.findByCredentials(req.body.input, req.body.password)
                          console.log(`userFound: ${user}`)
                         const createdToken = await user.generateAuthToken();
 

@@ -32,7 +32,7 @@ const userSchema = mongoose.Schema({
 userSchema.methods.generateAuthToken = async function() {
     let user = this;
     let access = 'auth';
-    let token = jwt.sign({_id: user._id.toHexString(), access}, process.env.JWT_SECRET).toString();
+    let token = jwt.sign({_id: user._id.toHexString(), access}, process.env.JWT_SECRET, {expiresIn: "90 minutes"}).toString();
     console.log(user)
     console.log(access)
     console.log(token)
@@ -78,16 +78,16 @@ userSchema.statics.findByToken = async function(token) {
     }
 }
 
-userSchema.statics.findByCredentials = async function(email, password) {
+userSchema.statics.findByCredentials = async function(userInput, password) {
 
     let User = this;
 
     try {
-        const foundEmail = await User.findOne({email});
-
+        const foundEmail = await User.findOne({email: userInput});
+        console.log(userInput)
     if(!foundEmail)
     {
-        const foundUsername = await User.findone({username});
+        const foundUsername = await User.findOne({username: userInput});
 
         if(!foundUsername)
         {
