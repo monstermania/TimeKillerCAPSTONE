@@ -5,34 +5,48 @@
 h1{
     font-family: 'Galindo', sans-serif;
     text-shadow:2px 2px rgb(0, 0, 0);
-    color:white;
+    color:rgb(139, 179, 251);
 }
 
 a{
     font-family: 'Galindo', sans-serif;
     text-shadow:2px 2px rgb(0, 0, 0);
-    color:white;
-}
-
-nav{
-    border:3px rgb(139, 179, 251) solid;
-    background:rgb(139, 179, 251);
-}
-
-.navText{
-    text-align:center;
-    font-size:40px;
-    padding-right:20px;
-}
-
-#navSI{
-    padding-left:740px;
+    color:rgb(139, 179, 251);
+    text-decoration:none;
 }
 
 #GamesTitle{
+    text-align:center;
     font-size:100px;
-    color:rgb(139, 179, 251);
-    text-shadow:black;
 }
+
+hr{
+    margin-left:5%;
+    width:90%;
+    border:3px rgb(133, 174, 250) solid;
+    border-radius:50%;
+}
+
+#tictactoe{
+    margin-top:30px;
+    margin-left:10px;
+    text-align:center;
+}
+
+#tictactoeText{
+    font-size:50px;
+}
+
+#tictactoeImg{
+    border:5px black solid;
+}
+
+#games{
+    display:flex;
+    flex-direction: row;
+    align-items:left;
+}
+
+
 
 
