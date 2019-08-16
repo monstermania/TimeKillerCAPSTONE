@@ -1,0 +1,20 @@
+textarea{
+    border: 1px black solid;
+    currentColor: blueviolet;
+    height: 500px;
+    width: 350px;
+}
+form{
+    display: flex;
+    flex-direction: row;
+}
+section{
+    margin: 0 75px;
+}
+#enjoyQ {
+    width:200px;
+    height:100px;
+}
+#wow{
+    font-weight: 600;
+}
