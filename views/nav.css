@@ -1,0 +1,45 @@
+/* h1{
+    font-family: 'Galindo', sans-serif;
+    text-shadow:2px 2px rgb(0, 0, 0);
+    color:white;
+}
+
+a{
+    font-family: 'Galindo', sans-serif;
+    text-shadow:2px 2px rgb(0, 0, 0);
+    color:white;
+} */
+
+nav{
+    border:3px rgb(139, 179, 251) solid;
+    background:rgb(139, 179, 251);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+}
+
+.navText{
+    font-family: 'Galindo', sans-serif;
+    text-shadow:2px 2px rgb(0, 0, 0);
+    color:white;
+    font-size:40px;
+    padding-right:5px;
+    line-height:0.5;
+}
+
+#logo{
+    height:50px;
+    width:auto;
+}
+
+.logo{
+    flex-grow:1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#navSI{
+    padding-right:20px;
+}
